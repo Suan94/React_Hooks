@@ -15,10 +15,14 @@ export const FormInput = ({ value }) => {
     }, [ value ]); 
     
     const increment = (  ) => {
-        setCounter( counter + 1);
+        console.log(typeof counter);
+        setCounter( +counter + 1);
     };
     
-
+    const decrement = (  ) => {
+        console.log( typeof counter );
+        setCounter( counter - 1 );
+    };
 
 
     return (
@@ -30,7 +34,9 @@ export const FormInput = ({ value }) => {
                 <p>Valor: { counter }</p>
                 <hr />
 
-                <button type='button' className='btn btn-primary' onClick={ increment }> + 1 </button>
+                <button type='button' className='btn btn-primary mb-4' onClick={ increment }> + 1 </button>
+                <button type='button' className='btn btn-primary mb-4' onClick={ decrement }> - 1 </button>
+
 
             </>
 
